@@ -1,0 +1,64 @@
+<div class="container-dialog-user">
+  <div class="container-dialog-user__title">
+    <h2 mat-dialog-title>
+      <mat-icon>{{data.isEdition ? 'edit': 'add' }}</mat-icon>
+      {{ data.isEdition ? 'Editar dados da Placa: '+ data.vehicle.placa : 'Adicionar Veículo' }}
+    </h2>
+  </div>
+  <form [formGroup]="vehicleForm">
+    <div class="container-dialog-user__form">
+      <div mat-dialog-content>
+        <mat-form-field class="field" [hideRequiredMarker]="true" *ngIf="false" [hideRequiredMarker]="true">
+          <mat-label>ID</mat-label>
+          <input matInput formControlName="id" placeholder="Id" required />
+          <mat-error *ngIf="vehicleForm.controls['id'].errors?.['required']">* Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field" [hideRequiredMarker]="true">
+          <mat-label>Placa</mat-label>
+          <input matInput formControlName="placa" placeholder="Placa" required />
+          <mat-error *ngIf="vehicleForm.controls['placa'].errors?.['required']">* Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field" [hideRequiredMarker]="true">
+          <mat-label>Chassi</mat-label>
+          <input matInput formControlName="chassi" placeholder="chassi" required />
+          <mat-error *ngIf="vehicleForm.controls['chassi'].errors?.['required']">* Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field" [hideRequiredMarker]="true">
+          <mat-label>Renavam</mat-label>
+          <input matInput formControlName="renavam" placeholder="renavam" required />
+          <mat-error *ngIf="vehicleForm.controls['renavam'].errors?.['required']">* Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field" [hideRequiredMarker]="true">
+          <mat-label>Modelo</mat-label>
+          <input matInput formControlName="modelo" placeholder="modelo" required />
+          <mat-error *ngIf="vehicleForm.controls['modelo'].errors?.['required']">* Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field" [hideRequiredMarker]="true">
+          <mat-label>Marca</mat-label>
+          <input matInput formControlName="marca" placeholder="marca" required />
+          <mat-error *ngIf="vehicleForm.controls['marca'].errors?.['required']">* Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="field" [hideRequiredMarker]="true">
+          <mat-label>Ano</mat-label>
+          <input matInput formControlName="ano" placeholder="ano" required />
+          <mat-error *ngIf="vehicleForm.controls['ano'].errors?.['required']">* Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+
+      </div>
+    </div>
+
+    <div class="container-dialog-user__btn">
+      <button mat-raised-button color="primary" class="form_btn_salvar" (click)="saveOrEditUser()"
+        [disabled]="!vehicleForm.valid">
+        {{ data.isEdition ? 'Editar Dados' : 'Adicionar Dados'}}
+      </button>
+    </div>
+  </form>
+</div>

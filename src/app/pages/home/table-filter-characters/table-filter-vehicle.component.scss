@@ -1,0 +1,54 @@
+@import "../../../../app/style/app.scss";
+
+.container {
+  width: 100%;
+
+  &__title {
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  &__filter {
+    mat-form-field {
+      width: 30%;
+
+      input {
+        padding: 0px 0px 0px 5px;
+        border-style: none;
+
+        ::placeholder {
+          font-style: italic;
+        }
+
+      }
+
+      mat-icon {
+        color: $background-color-secondary;
+      }
+    }
+  }
+}
+
+:host ::ng-deep .mat-form-field-flex {
+  background: $background-color-primary;
+}
+
+@media(max-width: 600px) {
+  .container {
+
+    &__title {
+      text-align: center;
+    }
+
+    &__filter {
+      mat-form-field {
+        width: 100%;
+      }
+    }
+  }
+}

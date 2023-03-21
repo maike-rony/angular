@@ -1,0 +1,80 @@
+<mat-table [dataSource]="dataSource">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="id">
+      <strong> {{row.id}} </strong>
+    </mat-cell>
+  </ng-container>
+
+  <!-- placa Column -->
+  <ng-container matColumnDef="placa">
+    <mat-header-cell *matHeaderCellDef> Placa </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="placa">
+      <strong> {{row.placa}} </strong>
+    </mat-cell>
+  </ng-container>
+
+
+  <!-- chassi Column -->
+  <ng-container matColumnDef="chassi">
+    <mat-header-cell *matHeaderCellDef> Chassi </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="chassi">
+      {{row.chassi}}
+    </mat-cell>
+  </ng-container>
+
+  <!-- renavam Column -->
+  <ng-container matColumnDef="renavam">
+    <mat-header-cell *matHeaderCellDef> Renavam </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="renavam">
+      {{row.renavam}}
+    </mat-cell>
+  </ng-container>
+
+
+  <!-- modelo Column -->
+  <ng-container matColumnDef="modelo">
+    <mat-header-cell *matHeaderCellDef> Modelo </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="modelo">
+      {{row.modelo}}
+    </mat-cell>
+  </ng-container>
+
+
+  <!-- marca Column -->
+  <ng-container matColumnDef="marca">
+    <mat-header-cell *matHeaderCellDef> Marca </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="marca">
+      {{row.marca}}
+    </mat-cell>
+  </ng-container>
+
+  <!-- ano Column -->
+  <ng-container matColumnDef="ano">
+    <mat-header-cell *matHeaderCellDef> Ano </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="ano">
+       {{row.ano}}
+    </mat-cell>
+  </ng-container>
+
+   <!-- acoes Column -->
+   <ng-container matColumnDef="acoes">
+    <mat-header-cell *matHeaderCellDef> Ações </mat-header-cell>
+    <mat-cell *matCellDef="let row" data-label="acoes" class="actions">
+      <button (click)="editVehicle(row)" mat-raised-button color="warn" aria-label="Delete">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button (click)="deleteVehicle(row)" mat-raised-button color="info" aria-label="Editar">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;">
+  </mat-row>
+
+</mat-table>

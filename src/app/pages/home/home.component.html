@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="container__header">
+    <div class="logo">
+      <img src="https://www.vectorlogo.zone/logos/angular/angular-ar21.png" alt="logo">
+    </div>
+
+    <div class="title">
+      <strong> Maike Rony Schuerzoski </strong>
+      <span> Teste de Front-end </span>
+    </div>
+
+  </div>
+  <div class="container__content">
+    <app-table-filter-vehicle
+    (callbackFilterElement)="callbackFilterElement($event)">
+    </app-table-filter-vehicle>
+    <button mat-raised-button color="primary" class="form_btn_salvar" (click)="newVehicle()">
+      Adicionar Veículo
+    </button>
+    <div class="table">
+      <ng-container *ngIf="dataVehicle && dataVehicle.length !== 0; else elseTemplate">
+        <app-table-vehicle
+          [dataVehicle]="dataVehicle">
+        </app-table-vehicle>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <h2> Nenhum Dado Encontrado! </h2>
+      </ng-template>
+    </div>
+  </div>
+</div>

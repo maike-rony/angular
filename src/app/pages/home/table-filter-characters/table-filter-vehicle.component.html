@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="container__title">
+    <h2> Busca por Placa</h2>
+  </div>
+
+  <div class="container__filter">
+    <form [formGroup]="formSearch">
+      <mat-form-field appearance="none">
+        <input matInput formControlName="search" placeholder="Search">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </form>
+  </div>
+</div>
